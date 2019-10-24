@@ -1,0 +1,626 @@
+<!DOCTYPE html>
+
+
+
+
+
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.0.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.4.2">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=7.4.2">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=7.4.2">
+  <link rel="mask-icon" href="/images/logo.svg?v=7.4.2" color="#222">
+
+<link rel="stylesheet" href="/css/main.css?v=7.4.2">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.7.0">
+  <link rel="stylesheet" href="/lib/pace/pace-theme-minimal.min.css?v=1.0.2">
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+
+
+<script id="hexo-configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '7.4.2',
+    exturl: false,
+    sidebar: {"position":"left","display":"post","offset":12,"onmobile":false},
+    copycode: {"enable":false,"show_result":false,"style":null},
+    back2top: {"enable":true,"sidebar":false,"scrollpercent":true},
+    bookmark: {"enable":false,"color":"#222","save":"auto"},
+    fancybox: false,
+    mediumzoom: false,
+    lazyload: false,
+    pangu: false,
+    algolia: {
+      appID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    },
+    localsearch: {"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    path: '',
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    translation: {
+      copy_button: '复制',
+      copy_success: '复制成功',
+      copy_failure: '复制失败'
+    },
+    sidebarPadding: 40
+  };
+</script>
+
+  <meta name="description" content="5miles Deeplinks      body {     font-size: 180%;   }   li {     margin: 20px 0;   }       5miles Deeplinks   首页Flash Deals 首页Flash Deals(指定场次) 兼容旧的专场频道link 兼容旧的专场频道link(指定场次) 通用的Flutter页面link(-">
+<meta property="og:type" content="website">
+<meta property="og:title" content="梦雪de博客">
+<meta property="og:url" content="https:&#x2F;&#x2F;yanftch.github.io&#x2F;others&#x2F;5milesapp_deeplinks.html">
+<meta property="og:site_name" content="梦雪de博客">
+<meta property="og:description" content="5miles Deeplinks      body {     font-size: 180%;   }   li {     margin: 20px 0;   }       5miles Deeplinks   首页Flash Deals 首页Flash Deals(指定场次) 兼容旧的专场频道link 兼容旧的专场频道link(指定场次) 通用的Flutter页面link(-">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2019-10-24T09:16:45.209Z">
+<meta name="twitter:card" content="summary">
+  <link rel="canonical" href="https://yanftch.github.io/others/5milesapp_deeplinks">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: false,
+    isPost: false,
+    isPage: true,
+    isArchive: false
+  };
+</script>
+
+  <title>
+       | 梦雪de博客
+    
+  </title>
+  
+
+
+  <script>
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?eb8fa88ecfb8278f9c87a66be2187a34";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-meta">
+
+    <div>
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">梦雪de博客</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+        <p class="site-subtitle">梦雪同学的微博客</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+      
+      
+        
+        
+        <li class="menu-item menu-item-home">
+      
+    
+      
+      
+        
+      
+        
+      
+        
+      
+    
+
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>首页</a>
+
+  </li>
+      
+    
+      
+      
+        
+        
+        <li class="menu-item menu-item-categories">
+      
+    
+      
+      
+        
+      
+        
+          
+        
+      
+        
+      
+    
+
+    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>分类<span class="badge">0</span></a>
+
+  </li>
+      
+    
+      
+      
+        
+        
+        <li class="menu-item menu-item-archives">
+      
+    
+      
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档<span class="badge">1</span></a>
+
+  </li>
+      
+    
+      
+      
+        
+        
+        <li class="menu-item menu-item-about">
+      
+    
+      
+      
+        
+      
+        
+      
+        
+      
+    
+
+    <a href="/about/" rel="section"><i class="fa fa-fw fa-user"></i>关于</a>
+
+  </li>
+      
+    
+  </ul>
+
+</nav>
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+            
+
+  
+    
+    
+  
+    
+    
+  
+    
+    
+  
+    
+    
+  
+  
+
+          <div class="content">
+            
+
+  <div class="posts-expand">
+    
+    
+    
+    <div class="post-block" lang="zh-CN">
+      <header class="post-header">
+
+<h1 class="post-title" itemprop="name headline">
+  
+
+</h1>
+
+<div class="post-meta">
+  
+
+</div>
+
+</header>
+
+      
+      
+      
+      <div class="post-body">
+          
+<!DOCTYPE html>
+<html>
+<head>
+  <title>5miles Deeplinks</title>
+  <style type="text/css">
+  body {
+    font-size: 180%;
+  }
+  li {
+    margin: 20px 0;
+  }
+  </style>
+</head>
+<body>
+<p>
+5miles Deeplinks
+</p>
+<ul>
+<li><a href="fivemiles://home_tab?name=flash_deals" target="_blank" rel="noopener">首页Flash Deals</a></li>
+<li><a href="fivemiles://home_tab?name=flash_deals&id=6" target="_blank" rel="noopener">首页Flash Deals(指定场次)</a></li>
+<li><a href="fivemiles://bid_topic" target="_blank" rel="noopener">兼容旧的专场频道link</a></li>
+<li><a href="fivemiles://bid_topic?id=6" target="_blank" rel="noopener">兼容旧的专场频道link(指定场次)</a></li>
+<li><a href="fivemiles://flt?url=%2Fdemo" target="_blank" rel="noopener">通用的Flutter页面link(-> /demo)</a></li>
+<li><a href="fivemiles://home_tab?name=car" target="_blank" rel="noopener">首页Car Dash</a></li>
+<li><a href="fivemiles://car_bid" target="_blank" rel="noopener">兼容旧的Car Dash链接</a></li>
+<li><a href="fivemiles://home_tab?name=bid" target="_blank" rel="noopener">首页Bid（不指定品类）</a></li>
+<li><a href="fivemiles://home_tab?name=bid&cid=187" target="_blank" rel="noopener">首页Bid（General Electronics）</a></li>
+<li><a href="fivemiles://home_tab?name=local" target="_blank" rel="noopener">首页Local</a></li>
+<li><a href="fivemiles://home_tab?name=dash" target="_blank" rel="noopener">首页Dash（不指定品类）</a></li>
+<li><a href="fivemiles://home_tab?name=dash&cid=-1" target="_blank" rel="noopener">首页Dash（Free Shipping）</a></li>
+<li><a href="fivemiles://bid" target="_blank" rel="noopener">Dash频道</a></li>
+<li>
+  <ul>Branch Deeplinks
+    <li><a href="https://app.5miles.us/cardashemail" target="_blank" rel="noopener">app.5miles.us/cardashemail</a></li>
+    <li><a href="https://app.5miles.us/carlocal" target="_blank" rel="noopener">app.5miles.us/carlocal</a></li>
+    <li><a href="https://app.5miles.us/carfeature" target="_blank" rel="noopener">app.5miles.us/carfeature</a></li>
+    <li><a href="https://bnc.lt/carfeature" target="_blank" rel="noopener">bnc.lt/carfeature</a></li>
+  </ul>
+</li>
+<li>
+  <ul>有详细规格的Dash商品（测试环境）
+    <li><a href="fivemiles://bid_item?id=92qj7eKVJ8" target="_blank" rel="noopener">商品1</a></li>
+    <li><a href="fivemiles://bid_item?id=Ev19PKYVBD" target="_blank" rel="noopener">商品2</a></li>
+    <li><a href="fivemiles://bid_item?id=6OrW0kxqlg" target="_blank" rel="noopener">商品3</a></li>
+  </ul>
+</li>
+<li>
+  <ul>有详细规格的Dash商品（生产环境）
+    <li><a href="fivemiles://bid_item?id=dQVZQQ5jqO" target="_blank" rel="noopener">商品1</a></li>
+    <li><a href="fivemiles://bid_item?id=GZrLGGEy1l" target="_blank" rel="noopener">商品2</a></li>
+    <li><a href="fivemiles://bid_item?id=Yz1A44zgVw" target="_blank" rel="noopener">商品3</a></li>
+  </ul>
+</li>
+<li><a href="fivemiles://redirect?url=https%3A%2F%2Ftest-m.5milesapp.com%2Fsalestools" target="_blank" rel="noopener">Sales Tools(测试)</a></li>
+<li><a href="fivemiles://main_tab?type=main" target="_blank" rel="noopener">首页</a></li>
+<li><a href="fivemiles://main_tab?type=search" target="_blank" rel="noopener">首页/品类</a></li>
+<li><a href="fivemiles://main_tab?type=message" target="_blank" rel="noopener">首页/Messages</a></li>
+<li><a href="fivemiles://main_tab?type=me" target="_blank" rel="noopener">首页/Profile</a></li>
+<li><a href="fivemiles://main_tab?type=x" target="_blank" rel="noopener">首页/未知tab</a></li>
+<li><a href="fivemiles://search?keyword=&amp;params=%7B%22filter%22%3A%7B%22root_cat_id%22%3A1001%2C%22cat_id%22%3A-1%2C%22geo_tag_id%22%3A0%7D%2C%22keyword%22%3A%22%22%7D" target="_blank" rel="noopener">Services Root Category</a></li>
+<li><a href="https://app.appsflyer.com/com.thirdrock.fivemiles?pid=jampp_int&c=Jampp_Engagement&trackid=%7Bhash%7D&android_id=%7Bandroid_id%7D&advertising_id=%7Bgoogle_advertising_id%7D&af_cost_model=CPI&af_cost_currency=USD&af_cost_value=%7Bcampaign_price%7D&is_retargeting=true&af_dp=fivemiles%3A%2F%2Fsearch%3Fcategory%3D14%26params%3D%257B%2522filter%2522%3A%257B%2522area%2522%3A1%2C%2522dealer_only%2522%3A0%2C%2522orderby%2522%3A0%257D%2C%2522category%2522%3A14%257D" target="_blank" rel="noopener">encoded AppsFlyer retargeting</a></li>
+<li><a href="https://app.appsflyer.com/com.thirdrock.fivemiles?pid=jampp_int&c=Jampp_Engagement&trackid=%7Bhash%7D&android_id=%7Bandroid_id%7D&advertising_id=%7Bgoogle_advertising_id%7D&af_cost_model=CPI&af_cost_currency=USD&af_cost_value=%7Bcampaign_price%7D&is_retargeting=true&af_dp=fivemiles://search?category=14&params=%7B%22filter%22:%7B%22area%22:1,%22dealer_only%22:0,%22orderby%22:0%7D,%22category%22:14%7D" target="_blank" rel="noopener">origin AppsFlyer retargeting</a></li>
+<li><a href="fivemiles://item?id=L45xDBJRRyJ0MEVl&amp;rfTag=H_0_3" target="_blank" rel="noopener">Item</a></li>
+<li><a href="fivemiles://item?id=DGVzalPVZLPpQYeB&amp;rfTag=H_0_3" target="_blank" rel="noopener">Old Service Item</a></li>
+<li><a href="fivemiles://item?id=Y5p7WPk3wZPVy8Qb&amp;rfTag=H_0_3" target="_blank" rel="noopener">My Old Service Item</a></li>
+<li><a href="fivemiles://person?id=3AyrvZqrnX&amp;rfTag=H_0_3" target="_blank" rel="noopener">Person</a></li>
+<li><a href="fivemiles://person?id=12NopMkrDb&amp;rfTag=H_0_3" target="_blank" rel="noopener">Self (id256)</a></li>
+<li><a href="https://test-www.5milesapp.com/person/12NopMkrDb?rfTag=H_0_3" target="_blank" rel="noopener">HTTP Self (id256)</a></li>
+<li><a href="fivemiles://review?id=3AyrvZqrnX&amp;rfTag=H_0_3" target="_blank" rel="noopener">Reiews</a></li>
+<li><a href="fivemiles://review?id=gP5r4bAOKV&amp;rfTag=H_0_3" target="_blank" rel="noopener">My Reiews (ywu32)</a></li>
+<li><a href="fivemiles://redirect?url=https%3A%2F%2Ftest-m.5milesapp.com%2Fhandpick%2Ftransit" target="_blank" rel="noopener">Transit页面（测试环境）</a></li>
+<li><a href="fivemiles://redirect?url=http%3A%2F%2Fbaidu.com&amp;title=AAAA&amp;rfTag=H_0_3" target="_blank" rel="noopener">URL in-app</a></li>
+<li><a href="fivemiles://redirect?type=web&amp;url=http%3A%2F%2Fbaidu.com&amp;title=AAAA&amp;rfTag=H_0_3" target="_blank" rel="noopener">URL browser</a></li>
+<li><a href="fivemiles://redirect?url=%2Fitem%3Fid%3DL45xDBJRRyJ0MEVl&amp;title=AAAA&amp;rfTag=H_0_3" target="_blank" rel="noopener">H5 redirect relative url</a></li>
+<li><a href="fivemiles://search?keyword=nike%20football&amp;rfTag=H_0_3" target="_blank" rel="noopener">Search Keyword</a></li>
+<li><a href="fivemiles://search?keyword=apple%20iphone" target="_blank" rel="noopener">Search Apple iPhone</a></li>
+<li><a href="http://app.5miles.us/deeplinktest3" target="_blank" rel="noopener">branch deeplink</a></li>
+<li><a href="fivemiles://search?category=2&amp;rfTag=H_0_3" target="_blank" rel="noopener">Search Category</a></li>
+<li><a href="fivemiles://search?keyword=iphone&amp;params=%7B%22keyword%22%3A%22iphone%22%2C%22rf_tag%22%3A%22OPX20160722020100_0_3%22%2C%22filter%22%3A%7B%22root_cat_id%22%3A1%2C%22cat_id%22%3A13%2C%22area%22%3A2%2C%22orderby%22%3A2%2C%22price_min%22%3A99%2C%22price_max%22%3A399%2C%22trade_type%22%3A1%7D%7D" target="_blank" rel="noopener">Search with filter</a></li>
+<li><a href="fivemiles://tab?type=service&amp;rfTag=H_0_3" target="_blank" rel="noopener">-> Services</a></li>
+<li><a href="fivemiles://publish?&amp;rfTag=H_0_3" target="_blank" rel="noopener">Publish new item</a></li>
+<li><a href="fivemiles://appointment?id=71&amp;offerLineId=45&amp;rfTag=H_0_3" target="_blank" rel="noopener">Appointment</a></li>
+<li><a href="https://play.google.com/store/apps/details?id=com.thirdrock.fivemiles&referrer=af_tranid%3D3TWQN6EHM7CQBYSR%26c%3Dbus%26pid%3DFacebook%20Mobile%20App%20Install%20Ads
+">Install referrer: Facebook</a></li>
+<li><a href="https://play.google.com/store/apps/details?id=com.thirdrock.fivemiles&referrer=af_tranid%3D3TWA2P2XQZE76EPC%26c%3Dbus%26pid%3Dtest" target="_blank" rel="noopener">Install referrer: Test</a></li>
+<li><a href="http://link.mail.fivemilesapp.com/wf/click?upn=dYNoRmDT4VvBFuZuIKw0bbJONNg6n2MhApUi8vCva-2FQd2E1XeVJ5SN2UyZ0oZNoE_QtKeT32ApKM-2BVV2DShPzwOXLfmcGbLUhHVWsgXxcbsJZwRD192mnirFgXjYUYb59r4T6XDiGjbMcVOouvlPRK0thiRAMq19yW36YanU7knAI6HiG7wawZd6xI4N-2FvR-2BcjUTLgc4JvLuTRSfGRdMoOuPr0BE6QAVTRuPwNCwFhPkk7-2FQfR0XP6PXRycsTlND5ZRtCmQt-2B5EgI3LRNmqoO-2FCDqtWC3zTov5AXaNMEgMEK4n-2BC6vOD7eqJNiZyu-2Bihb" target="_blank" rel="noopener">Profile Link in Email</a></li>
+<li><a href="https://www.google.com/url?rct=j&sa=t&url=https://www.5milesapp.com/person/GErAMBZnrg/king&ct=ga&cd=CAEYACoTNjEzNDYwNjEwODQ0MzE3MzQzNTIaZGYzOGFlNjVlZDlkMjg3OTpjb206ZW46Q04&usg=AFQjCNFQkqKnlRDevo6lYzOd5_ubcvZ6pA" target="_blank" rel="noopener">HTTP link to profile in Email</a></li>
+<li><a href="https://www.google.com/url?rct=j&sa=t&url=https://test-www.5milesapp.com/person/GErAMBZnrg/king&ct=ga&cd=CAEYACoTNjEzNDYwNjEwODQ0MzE3MzQzNTIaZGYzOGFlNjVlZDlkMjg3OTpjb206ZW46Q04&usg=AFQjCNFQkqKnlRDevo6lYzOd5_ubcvZ6pA" target="_blank" rel="noopener">HTTP link to profile in Email (Test server)</a></li>
+<li><a href="fivemiles://rn" target="_blank" rel="noopener">ReactNative DeepLink Handler</a></li>
+<li><a href="fivemiles://waterfall?nickname=shipping&rfTag=P20151107" target="_blank" rel="noopener">Waterfall Shipping</a></li>
+<li><a href="fivemiles://profile?rfTag=H_0_3" target="_blank" rel="noopener">Profile</a></li>
+</ul>
+</body>
+</html>
+
+<!--
+adb shell am start \
+        -W -a android.intent.action.VIEW \
+        -d "fivemiles://item?id=3zMKrOWEva0rvmGy" com.thirdrock.fivemiles.stage
+adb shell am start \
+        -W -a android.intent.action.VIEW \
+        -d "fivemiles://item?id=36ZlJGkO1dpJp5MR" com.thirdrock.fivemiles.stage
+-->
+
+        
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    
+    
+  </div>
+
+
+          </div>
+          
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+        
+        
+        
+        
+      
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image"
+      src="https://yanftch.github.io/images/320.379.jpg"
+      alt="yanftch">
+  <p class="site-author-name" itemprop="name">yanftch</p>
+  <div class="site-description" itemprop="description">给自己一次蜕变的机会！</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">1</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+    
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+      
+      
+        
+      
+      
+        
+      
+        <a href="https://github.com/yanftch" title="GitHub &amp;rarr; https:&#x2F;&#x2F;github.com&#x2F;yanftch" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+      </span>
+    
+      <span class="links-of-author-item">
+      
+      
+        
+      
+      
+        
+      
+        <a href="mailto:yanftch@163.com" title="E-Mail &amp;rarr; mailto:yanftch@163.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+      </span>
+    
+      <span class="links-of-author-item">
+      
+      
+        
+      
+      
+        
+      
+        <a href="https://www.jianshu.com/u/1af524dce090" title="简   书 &amp;rarr; https:&#x2F;&#x2F;www.jianshu.com&#x2F;u&#x2F;1af524dce090" rel="noopener" target="_blank"><i class="fa fa-fw fa-book"></i>简   书</a>
+      </span>
+    
+      <span class="links-of-author-item">
+      
+      
+        
+      
+      
+        
+      
+        <a href="https://twitter.com/yanftch" title="Twitter &amp;rarr; https:&#x2F;&#x2F;twitter.com&#x2F;yanftch" rel="noopener" target="_blank"><i class="fa fa-fw fa-twitter"></i>Twitter</a>
+      </span>
+    
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+<div class="copyright">
+  &copy; 
+  <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">yanftch</span>
+</div>
+
+        
+
+
+
+
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js?v=3.1.0"></script>
+  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+<script src="/js/utils.js?v=7.4.2"></script><script src="/js/motion.js?v=7.4.2"></script>
+<script src="/js/schemes/pisces.js?v=7.4.2"></script>
+<script src="/js/next-boot.js?v=7.4.2"></script>
+
+  <script defer src="/lib/three/three.min.js"></script>
+    
+    <script defer src="/lib/three/three-waves.min.js"></script>
+  
+    
+    <script defer src="/lib/three/canvas_lines.min.js"></script>
+  
+    
+    <script defer src="/lib/three/canvas_sphere.min.js"></script>
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+</body>
+</html>
