@@ -25,7 +25,7 @@
   var NexT = window.NexT || {};
   var CONFIG = {
     root: '/',
-    scheme: 'Muse',
+    scheme: 'Pisces',
     version: '7.4.2',
     exturl: false,
     sidebar: {"position":"left","display":"post","offset":12,"onmobile":false},
@@ -59,7 +59,7 @@
 <meta property="og:type" content="article">
 <meta property="og:title" content="test">
 <meta property="og:url" content="https:&#x2F;&#x2F;yanftch.github.io&#x2F;2019&#x2F;10&#x2F;24&#x2F;test&#x2F;index.html">
-<meta property="og:site_name" content="Hexo">
+<meta property="og:site_name" content="梦雪">
 <meta property="og:description" content="WebView 的使用，算得上是比较普遍的，特别是与 JS 的交互，今天整理一下在 flutter 中使用 WebView 的一些事~ 重点讲解如下两个主流插件的使用： 官方插件：webview_flutterpub 比较好用的插件：flutter_webview_plugin 任何一个插件的使用，都是两步走：1.引入依赖2.导入使用，应用组件(widget) 但是这个插件的使用过程中，在 IOS">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https:&#x2F;&#x2F;yanftch.github.io&#x2F;2019&#x2F;10&#x2F;24&#x2F;test&#x2F;duola_a.jpg">
@@ -80,7 +80,7 @@
   };
 </script>
 
-  <title>test | Hexo</title>
+  <title>test | 梦雪</title>
   
 
 
@@ -126,10 +126,12 @@
     <div>
       <a href="/" class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
-        <span class="site-title">Hexo</span>
+        <span class="site-title">梦雪</span>
         <span class="logo-line-after"><i></i></span>
       </a>
     </div>
+        <p class="site-subtitle">梦雪同学的微博客</p>
+      
   </div>
 
   <div class="site-nav-toggle">
@@ -152,8 +154,41 @@
         <li class="menu-item menu-item-home">
       
     
+      
+      
+        
+      
+        
+      
+        
+      
+    
 
     <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>首页</a>
+
+  </li>
+      
+    
+      
+      
+        
+        
+        <li class="menu-item menu-item-categories">
+      
+    
+      
+      
+        
+      
+        
+          
+        
+      
+        
+      
+    
+
+    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>分类<span class="badge">0</span></a>
 
   </li>
       
@@ -165,15 +200,46 @@
         <li class="menu-item menu-item-archives">
       
     
+      
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
 
-    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档</a>
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档<span class="badge">3</span></a>
+
+  </li>
+      
+    
+      
+      
+        
+        
+        <li class="menu-item menu-item-about">
+      
+    
+      
+      
+        
+      
+        
+      
+        
+      
+    
+
+    <a href="/about/" rel="section"><i class="fa fa-fw fa-user"></i>关于</a>
 
   </li>
       
     
   </ul>
-
-    
 
 </nav>
 </div>
@@ -189,6 +255,8 @@
     <main class="main">
       <div class="main-inner">
         <div class="content-wrap">
+            
+
           <div class="content">
             
 
@@ -200,13 +268,13 @@
     <link itemprop="mainEntityOfPage" href="https://yanftch.github.io/2019/10/24/test/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="John Doe">
-      <meta itemprop="description" content="">
+      <meta itemprop="name" content="yanftch">
+      <meta itemprop="description" content="lala">
       <meta itemprop="image" content="/images/avatar.gif">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
+      <meta itemprop="name" content="梦雪">
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
@@ -370,8 +438,8 @@
 
       <div class="site-overview-wrap sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-  <p class="site-author-name" itemprop="name">John Doe</p>
-  <div class="site-description" itemprop="description"></div>
+  <p class="site-author-name" itemprop="name">yanftch</p>
+  <div class="site-description" itemprop="description">lala</div>
 </div>
 <div class="site-state-wrap motion-element">
   <nav class="site-state">
@@ -409,14 +477,14 @@
   <span class="with-love">
     <i class="fa fa-user"></i>
   </span>
-  <span class="author" itemprop="copyrightHolder">John Doe</span>
+  <span class="author" itemprop="copyrightHolder">yanftch</span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v4.0.0
   </div>
   <span class="post-meta-divider">|</span>
   <div class="theme-info">
       
-    主题 – <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> v7.4.2
+    主题 – <a href="https://pisces.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a> v7.4.2
   </div>
 
         
@@ -442,7 +510,7 @@
   <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
   <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
 <script src="/js/utils.js?v=7.4.2"></script><script src="/js/motion.js?v=7.4.2"></script>
-<script src="/js/schemes/muse.js?v=7.4.2"></script>
+<script src="/js/schemes/pisces.js?v=7.4.2"></script>
 <script src="/js/next-boot.js?v=7.4.2"></script>
 
 
