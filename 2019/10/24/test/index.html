@@ -32,7 +32,7 @@
     exturl: false,
     sidebar: {"position":"left","display":"post","offset":12,"onmobile":false},
     copycode: {"enable":false,"show_result":false,"style":null},
-    back2top: {"enable":true,"sidebar":false,"scrollpercent":false},
+    back2top: {"enable":true,"sidebar":false,"scrollpercent":true},
     bookmark: {"enable":false,"color":"#222","save":"auto"},
     fancybox: false,
     mediumzoom: false,
@@ -57,12 +57,12 @@
   };
 </script>
 
-  <meta name="description" content="WebView 的使用，算得上是比较普遍的，特别是与 JS 的交互，今天整理一下在 flutter 中使用 WebView 的一些事~ 重点讲解如下两个主流插件的使用： 官方插件：webview_flutterpub 比较好用的插件：flutter_webview_plugin 任何一个插件的使用，都是两步走：1.引入依赖2.导入使用，应用组件(widget) 但是这个插件的使用过程中，在 IOS">
+  <meta name="description" content="WebView 的使用，算得上是比较普遍的，特别是与 JS 的交互，今天整理一下在 flutter 中使用 WebView 的一些事~重点讲解如下两个主流插件的使用：官方插件：webview_flutterpub 比较好用的插件：flutter_webview_plugin任何一个插件的使用，都是两步走：1.引入依赖2.导入使用，应用组件(widget)">
 <meta property="og:type" content="article">
 <meta property="og:title" content="test">
 <meta property="og:url" content="https:&#x2F;&#x2F;yanftch.github.io&#x2F;2019&#x2F;10&#x2F;24&#x2F;test&#x2F;index.html">
 <meta property="og:site_name" content="梦雪de博客">
-<meta property="og:description" content="WebView 的使用，算得上是比较普遍的，特别是与 JS 的交互，今天整理一下在 flutter 中使用 WebView 的一些事~ 重点讲解如下两个主流插件的使用： 官方插件：webview_flutterpub 比较好用的插件：flutter_webview_plugin 任何一个插件的使用，都是两步走：1.引入依赖2.导入使用，应用组件(widget) 但是这个插件的使用过程中，在 IOS">
+<meta property="og:description" content="WebView 的使用，算得上是比较普遍的，特别是与 JS 的交互，今天整理一下在 flutter 中使用 WebView 的一些事~重点讲解如下两个主流插件的使用：官方插件：webview_flutterpub 比较好用的插件：flutter_webview_plugin任何一个插件的使用，都是两步走：1.引入依赖2.导入使用，应用组件(widget)">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https:&#x2F;&#x2F;yanftch.github.io&#x2F;2019&#x2F;10&#x2F;24&#x2F;test&#x2F;duola_a.jpg">
 <meta property="og:updated_time" content="2019-10-24T03:10:44.096Z">
@@ -326,10 +326,10 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p>WebView 的使用，算得上是比较普遍的，特别是与 JS 的交互，今天整理一下在 flutter 中使用 WebView 的一些事~<br><img src="/2019/10/24/test/duola_a.jpg" alt="Alt text"></p>
-<p>重点讲解如下两个主流插件的使用：</p>
-<p>官方插件：<a href="https://pub.dev/packages/webview_flutter" target="_blank" rel="noopener">webview_flutter</a><br>pub 比较好用的插件：<a href="https://pub.dev/packages/flutter_webview_plugin" target="_blank" rel="noopener">flutter_webview_plugin</a></p>
-<p>任何一个插件的使用，都是两步走：<br>1.引入依赖<br>2.导入使用，应用组件(widget)</p>
+        <p>WebView 的使用，算得上是比较普遍的，特别是与 JS 的交互，今天整理一下在 flutter 中使用 WebView 的一些事~<br><img src="/2019/10/24/test/duola_a.jpg" alt="Alt text"></p><p>重点讲解如下两个主流插件的使用：</p><p>官方插件：<a href="https://pub.dev/packages/webview_flutter" target="_blank" rel="noopener">webview_flutter</a><br>pub 比较好用的插件：<a href="https://pub.dev/packages/flutter_webview_plugin" target="_blank" rel="noopener">flutter_webview_plugin</a></p><p>任何一个插件的使用，都是两步走：<br>1.引入依赖<br>2.导入使用，应用组件(widget)</p><a id="more"></a>
+
+
+
 <p>但是这个插件的使用过程中，在 IOS 里边需要单独设置一项，不然会报错。如下，在ios/Runner/Info.plist中添加</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;key&gt;io.flutter.embedded_views_preview&lt;/key&gt;</span><br><span class="line">&lt;string&gt;YES&lt;/string&gt;*</span><br></pre></td></tr></table></figure>
 
@@ -375,7 +375,7 @@
     
     
         <div id="wechat_subscriber" style="display: block; padding: 10px 0; margin: 20px auto; width: 100%; text-align: center;">
-  <img id="wechat_subscriber_qcode" src="/images/wechat-qcode.jpg" alt="yanftch wechat" style="width: 200px; max-width: 100%;">
+  <img id="wechat_subscriber_qcode" src="/images/wechat-qcode.jpeg" alt="yanftch wechat" style="width: 200px; max-width: 100%;">
   <div>扫一扫~加我微信呗~</div>
 </div>
 

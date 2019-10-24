@@ -257,6 +257,13 @@ kbd {
   padding: 0.1em 0.3em;
   white-space: nowrap;
 }
+.post {
+  margin-top: 0px;
+  margin-bottom: 60px;
+  padding: 25px;
+  -webkit-box-shadow: 0 0 5px #fa8072;
+  -moz-box-shadow: 0 0 5px rgba(202,203,204,0.5);
+}
 .table-container {
   -webkit-overflow-scrolling: touch;
   overflow: auto;
@@ -295,10 +302,10 @@ td {
   border-bottom-width: 1px;
 }
 .btn {
-  background: #fff;
-  border: 2px solid #555;
-  border-radius: 2px;
-  color: #555;
+  background: #000;
+  border: 2px solid #00f;
+  border-radius: 15px;
+  color: #fff;
   display: inline-block;
   font-size: 0.875em;
   line-height: 2;
@@ -310,9 +317,9 @@ td {
   transition-timing-function: ease-in-out;
 }
 .btn:hover {
-  background: #222;
+  background: #ff0;
   border-color: #222;
-  color: #fff;
+  color: #f00;
 }
 .btn + .btn {
   margin: 0 0 8px 8px;
@@ -367,8 +374,8 @@ td {
 }
 pre,
 .highlight {
-  background: #f7f7f7;
-  color: #4d4d4c;
+  background: #262626;
+  color: #9e9e9e;
   line-height: 1.6;
   margin: 0 auto 20px;
 }
@@ -390,13 +397,13 @@ pre {
 }
 pre code {
   background: none;
-  color: #4d4d4c;
+  color: #9e9e9e;
   font-size: 0.875em;
   padding: 0;
   text-shadow: none;
 }
 .highlight *::selection {
-  background: #d6d6d6;
+  background: #303030;
 }
 .highlight pre {
   border: 0;
@@ -414,7 +421,7 @@ pre code {
 }
 .highlight figcaption {
   background: #eee;
-  color: #4d4d4c;
+  color: #9e9e9e;
   line-height: 1em;
   margin: 0;
   padding: 0.5em;
@@ -428,21 +435,21 @@ pre code {
   clear: both;
 }
 .highlight figcaption a {
-  color: #4d4d4c;
+  color: #9e9e9e;
   float: right;
 }
 .highlight figcaption a:hover {
-  border-bottom-color: #4d4d4c;
+  border-bottom-color: #9e9e9e;
 }
 .highlight .gutter pre {
-  background: #eff2f3;
-  color: #869194;
+  background: #262626;
+  color: #6a6a6a;
   padding-left: 10px;
   padding-right: 10px;
   text-align: right;
 }
 .highlight .code pre {
-  background: #f7f7f7;
+  background: #262626;
   padding-left: 10px;
   width: 100%;
 }
@@ -459,20 +466,20 @@ pre code {
   border: 0;
 }
 pre .deletion {
-  background: #fdd;
+  background: #800000;
 }
 pre .addition {
-  background: #dfd;
+  background: #008000;
 }
 pre .meta {
-  color: #eab700;
+  color: #a68f01;
   -moz-user-select: none;
   -ms-user-select: none;
   -webkit-user-select: none;
   user-select: none;
 }
 pre .comment {
-  color: #8e908c;
+  color: #6a6a6a;
 }
 pre .variable,
 pre .attribute,
@@ -487,7 +494,7 @@ pre .html .doctype,
 pre .css .id,
 pre .css .class,
 pre .css .pseudo {
-  color: #c82829;
+  color: #ff511a;
 }
 pre .number,
 pre .preprocessor,
@@ -497,7 +504,7 @@ pre .literal,
 pre .params,
 pre .constant,
 pre .command {
-  color: #f5871f;
+  color: #dd7202;
 }
 pre .ruby .class .title,
 pre .css .rules .attribute,
@@ -510,11 +517,11 @@ pre .ruby .symbol,
 pre .xml .cdata,
 pre .special,
 pre .formula {
-  color: #718c00;
+  color: #4ca340;
 }
 pre .title,
 pre .css .hexcolor {
-  color: #3e999f;
+  color: #07a38f;
 }
 pre .function,
 pre .python .decorator,
@@ -524,11 +531,11 @@ pre .ruby .title .keyword,
 pre .perl .sub,
 pre .javascript .title,
 pre .coffeescript .title {
-  color: #4271ae;
+  color: #3294ff;
 }
 pre .keyword,
 pre .javascript .function {
-  color: #8959a8;
+  color: #cc62fe;
 }
 .blockquote-center {
   border-left: none;
@@ -873,9 +880,9 @@ pre .javascript .function {
   margin: 0.1em 0.2em;
 }
 .comment-button-group .comment-button.active {
-  background: #222;
+  background: #ff0;
   border-color: #222;
-  color: #fff;
+  color: #f00;
 }
 .comment-position {
   display: none;
@@ -1147,7 +1154,7 @@ pre .javascript .function {
 }
 .links-of-author a::before,
 .links-of-author span.exturl::before {
-  background: #53e8ff;
+  background: #4f0ef6;
   border-radius: 50%;
   content: ' ';
   display: inline-block;
@@ -1478,10 +1485,7 @@ pre .javascript .function {
   transition-delay: 0s;
   transition-duration: 0.2s;
   transition-timing-function: ease-in-out;
-  width: 24px;
-}
-.back-to-top span {
-  display: none;
+  width: initial;
 }
 .back-to-top:hover {
   color: #fc6423;
