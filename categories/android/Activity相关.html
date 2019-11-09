@@ -1,0 +1,612 @@
+<!DOCTYPE html>
+
+
+
+
+
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.0.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.4.2">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=7.4.2">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=7.4.2">
+  <link rel="mask-icon" href="/images/logo.svg?v=7.4.2" color="#222">
+
+<link rel="stylesheet" href="/css/main.css?v=7.4.2">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.7.0">
+  <link rel="stylesheet" href="/lib/pace/pace-theme-minimal.min.css?v=1.0.2">
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+
+
+<script id="hexo-configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '7.4.2',
+    exturl: false,
+    sidebar: {"position":"left","display":"post","offset":12,"onmobile":false},
+    copycode: {"enable":false,"show_result":false,"style":null},
+    back2top: {"enable":true,"sidebar":false,"scrollpercent":true},
+    bookmark: {"enable":false,"color":"#222","save":"auto"},
+    fancybox: false,
+    mediumzoom: false,
+    lazyload: false,
+    pangu: false,
+    algolia: {
+      appID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    },
+    localsearch: {"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    path: '',
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    translation: {
+      copy_button: '复制',
+      copy_success: '复制成功',
+      copy_failure: '复制失败'
+    },
+    sidebarPadding: 40
+  };
+</script>
+
+  <meta name="description" content="Activity 生命周期onCreate()：调用一次onStart()：Activity 可见，不可操作onResume()：可见,前台,获取焦点，可参与用户交互onPause()：失去焦点，可见或部分可见onStop()：不可见onDestroy()：销毁onRestart():当前 Activity 从不可见状态回到可见状态会回调">
+<meta property="og:type" content="website">
+<meta property="og:title" content="梦雪de博客">
+<meta property="og:url" content="https:&#x2F;&#x2F;yanftch.github.io&#x2F;categories&#x2F;android&#x2F;Activity%E7%9B%B8%E5%85%B3.html">
+<meta property="og:site_name" content="梦雪de博客">
+<meta property="og:description" content="Activity 生命周期onCreate()：调用一次onStart()：Activity 可见，不可操作onResume()：可见,前台,获取焦点，可参与用户交互onPause()：失去焦点，可见或部分可见onStop()：不可见onDestroy()：销毁onRestart():当前 Activity 从不可见状态回到可见状态会回调">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2019-11-09T13:08:33.426Z">
+<meta name="twitter:card" content="summary">
+  <link rel="canonical" href="https://yanftch.github.io/categories/android/Activity%E7%9B%B8%E5%85%B3">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: false,
+    isPost: false,
+    isPage: true,
+    isArchive: false
+  };
+</script>
+
+  <title>
+       | 梦雪de博客
+    
+  </title>
+  
+
+
+  <script>
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?eb8fa88ecfb8278f9c87a66be2187a34";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-meta">
+
+    <div>
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">梦雪de博客</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+        <p class="site-subtitle">梦雪同学的微博客</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+      
+      
+        
+        
+        <li class="menu-item menu-item-home">
+      
+    
+      
+      
+        
+      
+        
+      
+        
+      
+    
+
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>首页</a>
+
+  </li>
+      
+    
+      
+      
+        
+        
+        <li class="menu-item menu-item-categories">
+      
+    
+      
+      
+        
+      
+        
+          
+        
+      
+        
+      
+    
+
+    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>分类<span class="badge">0</span></a>
+
+  </li>
+      
+    
+      
+      
+        
+        
+        <li class="menu-item menu-item-archives">
+      
+    
+      
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档<span class="badge">0</span></a>
+
+  </li>
+      
+    
+      
+      
+        
+        
+        <li class="menu-item menu-item-about">
+      
+    
+      
+      
+        
+      
+        
+      
+        
+      
+    
+
+    <a href="/about/" rel="section"><i class="fa fa-fw fa-user"></i>关于</a>
+
+  </li>
+      
+    
+  </ul>
+
+</nav>
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+            
+
+  
+    
+    
+  
+    
+    
+  
+    
+    
+  
+    
+    
+  
+  
+
+          <div class="content">
+            
+
+  <div class="posts-expand">
+    
+    
+    
+    <div class="post-block" lang="zh-CN">
+      <header class="post-header">
+
+<h1 class="post-title" itemprop="name headline">
+  
+
+</h1>
+
+<div class="post-meta">
+  
+  <ul class="breadcrumb">
+      
+      
+        
+          
+            
+          
+          
+            <li><a href="/categories/">CATEGORIES</a></li>
+          
+        
+      
+    
+      
+      
+        
+          
+            
+          
+          
+            <li><a href="/categories/android/">ANDROID</a></li>
+          
+        
+      
+    
+      
+      
+        
+          
+            
+          
+          
+            <li>ACTIVITY相关</li>
+          
+        
+      
+    
+  </ul>
+
+</div>
+
+</header>
+
+      
+      
+      
+      <div class="post-body">
+          <h5 id="Activity-生命周期"><a href="#Activity-生命周期" class="headerlink" title="Activity 生命周期"></a>Activity 生命周期</h5><p>onCreate()：调用一次<br>onStart()：Activity 可见，不可操作<br>onResume()：可见,前台,获取焦点，可参与用户交互<br>onPause()：失去焦点，可见或部分可见<br>onStop()：不可见<br>onDestroy()：销毁<br>onRestart():当前 Activity 从不可见状态回到可见状态会回调</p><a id="more"></a>
+<h5 id="Activity-生命周期-之-A-启动-B-生命周期变化"><a href="#Activity-生命周期-之-A-启动-B-生命周期变化" class="headerlink" title="Activity 生命周期 之 A 启动 B 生命周期变化"></a>Activity 生命周期 之 A 启动 B 生命周期变化</h5><p>初始情况，A 会走 onCreate()、onStart()、onResume()此时 AActivity 用户可见。这时启动 BActivity，AActivity 会走 onPause()，BActivity 会走 onCreate()、onStart()、onResume()，假如 BActivity 不是透明的背景或者对话框样式，那么 AActivity 会走 onStop()方法，此时如果按下返回键，从 B 回到 A，那么BActivity 会先走 onPause()，然后 AActivity 会走 onRestart()、onStart()、onResume()，用户可见 A 页面，然后 BActivity 会走 onStop()、onDestroy().<br>注意一点：因为 BActivity 的生命周期，必须会在 AActivity 的 onPause()之后调用，所以不要在 AActivity 的 onPause()里边做一些耗时间的操作。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">E/debug_MainActivity: onCreate: </span><br><span class="line">E/debug_MainActivity: onStart: </span><br><span class="line">E/debug_MainActivity: onResume: </span><br><span class="line">此时从 AActivity 启动 BActivity</span><br><span class="line">E/debug_MainActivity: onPause: </span><br><span class="line">E/debug_AccessibilityServiceActivity: onCreate: </span><br><span class="line">E/debug_AccessibilityServiceActivity: onStart: </span><br><span class="line">E/debug_AccessibilityServiceActivity: onResume: </span><br><span class="line">E/debug_MainActivity: onStop: </span><br><span class="line">此时在 BActivity 按下返回键，回到 AActivity</span><br><span class="line">E/debug_AccessibilityServiceActivity: onPause: </span><br><span class="line">E/debug_MainActivity: onRestart: </span><br><span class="line">E/debug_MainActivity: onStart: </span><br><span class="line">E/debug_MainActivity: onResume: </span><br><span class="line">E/debug_AccessibilityServiceActivity: onStop: </span><br><span class="line">E/debug_AccessibilityServiceActivity: onDestroy:</span><br></pre></td></tr></table></figure>
+
+
+<h5 id="A-启动-BActivity-的时候，A-的-onStop-一定会调用吗？AdeonStop-一定在-B-的-onResume-之后调用吗？"><a href="#A-启动-BActivity-的时候，A-的-onStop-一定会调用吗？AdeonStop-一定在-B-的-onResume-之后调用吗？" class="headerlink" title="A 启动 BActivity 的时候，A 的 onStop()一定会调用吗？AdeonStop 一定在 B 的 onResume 之后调用吗？"></a>A 启动 BActivity 的时候，A 的 onStop()一定会调用吗？AdeonStop 一定在 B 的 onResume 之后调用吗？</h5><p>如果 BActivity 是半透明或对话框样式，则不会走，就因为 AActivity 对用户而言还是可见的！</p>
+<h5 id="onPause-和-onStop-的区别"><a href="#onPause-和-onStop-的区别" class="headerlink" title="onPause()和 onStop()的区别"></a>onPause()和 onStop()的区别</h5><p>onPause：Activity 失去焦点，但是仍然可见<br>onStop：Activity 彻底不可见</p>
+<h5 id="onStart-和-onResume-的区别"><a href="#onStart-和-onResume-的区别" class="headerlink" title="onStart()和 onResume()的区别"></a>onStart()和 onResume()的区别</h5><p>onStart: 用户可见了，或者部分可见，不可操作。对应 onStop<br>onResume: 获得焦点，用户可操作了。对应 onPause</p>
+<h5 id="onRestart-方法什么时候会调用"><a href="#onRestart-方法什么时候会调用" class="headerlink" title="onRestart()方法什么时候会调用?"></a>onRestart()方法什么时候会调用?</h5><ul>
+<li>A 启动 B,然后从 B 回到 A 的时候,会回调</li>
+<li>按下 HOME 键,然后再切回来会回调</li>
+<li>从本应用多任务切到别的APP,然后再切回来会回调</li>
+</ul>
+<h5 id="Activity-横竖屏切换的生命周期"><a href="#Activity-横竖屏切换的生命周期" class="headerlink" title="Activity 横竖屏切换的生命周期"></a>Activity 横竖屏切换的生命周期</h5><p><strong>默认设置情况,也就是没有配置configChanges</strong><br>假如不对 Activity 进行任何的设置，那么初始创建 Activity 会走 onCreate(),onStart(),onResume(), 此时竖屏切换为横屏的时候，Activity 会走 onPause(),onSaveInstanceState(),onStop(),onDestroy(), 然后会重新创建，走 onCreate(),onStart(),onRestoreInstanceState(),onResume()。到此用户可见&amp;可操作页面 UI</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">E/debug_MainActivity: onCreate: </span><br><span class="line">E/debug_MainActivity: onStart: </span><br><span class="line">E/debug_MainActivity: onResume: </span><br><span class="line">// 此时从竖屏切换为横屏</span><br><span class="line">E/debug_MainActivity: onPause: </span><br><span class="line">E/debug_MainActivity: onSaveInstanceState: </span><br><span class="line">E/debug_MainActivity: onStop: </span><br><span class="line">E/debug_MainActivity: onDestroy: </span><br><span class="line">E/debug_MainActivity: onCreate: </span><br><span class="line">E/debug_MainActivity: onStart: </span><br><span class="line">E/debug_MainActivity: onRestoreInstanceState: </span><br><span class="line">E/debug_MainActivity: onResume: </span><br><span class="line">// 此时从横屏切换为竖屏</span><br><span class="line">E/debug_MainActivity: onPause: </span><br><span class="line">E/debug_MainActivity: onSaveInstanceState: </span><br><span class="line">E/debug_MainActivity: onStop: </span><br><span class="line">E/debug_MainActivity: onDestroy: </span><br><span class="line">E/debug_MainActivity: onCreate: </span><br><span class="line">E/debug_MainActivity: onStart: </span><br><span class="line">E/debug_MainActivity: onRestoreInstanceState: </span><br><span class="line">E/debug_MainActivity: onResume:</span><br></pre></td></tr></table></figure>
+<p><strong>不设置Activity的android:configChanges时，或 设置Activity的android:configChanges=”orientation”时，或设置Activity的android:configChanges=”orientation|keyboardHidden”</strong><br><strong>正常来说，设置了上述两种情况，跟默认情况是一样的，但是！！跟机型&amp;系统有关！！！！！</strong><br>国外的手机，一般跟默认流程一样，会重建！！</p>
+<p>国内的手机一般不会重建，而是下边的流程<br>在清单文件中设置了上述属性之后，横竖屏切换的时候不会重新构建生命周期，而是会回调 onConfigurationChanged() 方法，参数包含了屏幕的尺寸信息。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">E/debug_MainActivity: onCreate: </span><br><span class="line">E/debug_MainActivity: onStart: </span><br><span class="line">E/debug_MainActivity: onResume: </span><br><span class="line">// 此时由竖屏切换为横屏</span><br><span class="line">E/debug_MainActivity: onConfigurationChanged: </span><br><span class="line">// 此时由横屏切换回竖屏</span><br><span class="line">E/debug_MainActivity: onConfigurationChanged:</span><br></pre></td></tr></table></figure>
+
+<p><strong>最终结论：</strong><br>从 Android 3.2 (API级别 13)开始<br>1、不设置Activity的android:configChanges，或设置Activity的android:configChanges=”orientation”，或设置Activity的android:configChanges=”orientation|keyboardHidden”，切屏会重新调用各个生命周期，切横屏时会执行一次，切竖屏时会执行一次。<br>2、配置 android:configChanges=”orientation|keyboardHidden|screenSize”，才不会销毁 activity，且只调用 onConfigurationChanged方法。</p>
+<p><strong>但是最终涉及到机型，就不一定是这么样的了！</strong></p>
+
+        
+      </div>
+      
+      
+      
+    </div>
+    
+  <ul class="breadcrumb">
+      
+      
+        
+          
+            
+          
+          
+            <li><a href="/categories/">CATEGORIES</a></li>
+          
+        
+      
+    
+      
+      
+        
+          
+            
+          
+          
+            <li><a href="/categories/android/">ANDROID</a></li>
+          
+        
+      
+    
+      
+      
+        
+          
+            
+          
+          
+            <li>ACTIVITY相关</li>
+          
+        
+      
+    
+  </ul>
+
+    
+    
+    
+  </div>
+
+
+          </div>
+          
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+        
+        
+        
+        
+      
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-5"><a class="nav-link" href="#Activity-生命周期"><span class="nav-number">1.</span> <span class="nav-text">Activity 生命周期</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Activity-生命周期-之-A-启动-B-生命周期变化"><span class="nav-number">2.</span> <span class="nav-text">Activity 生命周期 之 A 启动 B 生命周期变化</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#A-启动-BActivity-的时候，A-的-onStop-一定会调用吗？AdeonStop-一定在-B-的-onResume-之后调用吗？"><span class="nav-number">3.</span> <span class="nav-text">A 启动 BActivity 的时候，A 的 onStop()一定会调用吗？AdeonStop 一定在 B 的 onResume 之后调用吗？</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#onPause-和-onStop-的区别"><span class="nav-number">4.</span> <span class="nav-text">onPause()和 onStop()的区别</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#onStart-和-onResume-的区别"><span class="nav-number">5.</span> <span class="nav-text">onStart()和 onResume()的区别</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#onRestart-方法什么时候会调用"><span class="nav-number">6.</span> <span class="nav-text">onRestart()方法什么时候会调用?</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Activity-横竖屏切换的生命周期"><span class="nav-number">7.</span> <span class="nav-text">Activity 横竖屏切换的生命周期</span></a></li></ol></div>
+        
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image"
+      src="https://yanftch.github.io/images/320.379.jpg"
+      alt="yanftch">
+  <p class="site-author-name" itemprop="name">yanftch</p>
+  <div class="site-description" itemprop="description">给自己一次蜕变的机会！</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+      
+      
+        
+      
+      
+        
+      
+        <a href="https://github.com/yanftch" title="GitHub &amp;rarr; https:&#x2F;&#x2F;github.com&#x2F;yanftch" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+      </span>
+    
+      <span class="links-of-author-item">
+      
+      
+        
+      
+      
+        
+      
+        <a href="mailto:yanftch@163.com" title="E-Mail &amp;rarr; mailto:yanftch@163.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+      </span>
+    
+      <span class="links-of-author-item">
+      
+      
+        
+      
+      
+        
+      
+        <a href="https://www.jianshu.com/u/1af524dce090" title="简   书 &amp;rarr; https:&#x2F;&#x2F;www.jianshu.com&#x2F;u&#x2F;1af524dce090" rel="noopener" target="_blank"><i class="fa fa-fw fa-book"></i>简   书</a>
+      </span>
+    
+      <span class="links-of-author-item">
+      
+      
+        
+      
+      
+        
+      
+        <a href="https://twitter.com/yanftch" title="Twitter &amp;rarr; https:&#x2F;&#x2F;twitter.com&#x2F;yanftch" rel="noopener" target="_blank"><i class="fa fa-fw fa-twitter"></i>Twitter</a>
+      </span>
+    
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+<div class="copyright">
+  &copy; 
+  <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">yanftch</span>
+</div>
+
+        
+
+
+
+
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js?v=3.1.0"></script>
+  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+<script src="/js/utils.js?v=7.4.2"></script><script src="/js/motion.js?v=7.4.2"></script>
+<script src="/js/schemes/pisces.js?v=7.4.2"></script>
+<script src="/js/next-boot.js?v=7.4.2"></script>
+
+  <script defer src="/lib/three/three.min.js"></script>
+    
+    <script defer src="/lib/three/three-waves.min.js"></script>
+  
+    
+    <script defer src="/lib/three/canvas_lines.min.js"></script>
+  
+    
+    <script defer src="/lib/three/canvas_sphere.min.js"></script>
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+</body>
+</html>
